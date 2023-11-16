@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #2e2100;
+    --white-color: #fff;
+    --black-color: #000;
+    --gray-color: #dbdbdb;
+    --text-color: #5f5b53;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    /* HACK to adjust 1rem = 1px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* auto calculate to size the box */
+    box-sizing: border-box;
+}
+
+/* Remove default */
+a,
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+}
+
+.content-size {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+/* common button */
+.btn {
+    min-width: 144px;
+    height: 50px;
+    background-color: #89b275;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    border-radius: 24.5px;
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
