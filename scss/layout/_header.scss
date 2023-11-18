@@ -1,0 +1,143 @@
+@use "../abstracts";
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background: var(--header-bg-color);
+}
+
+.top-bar {
+    @extend %flexItemsCenter;
+
+    padding: 30px 0;
+    @include abstracts.breakpoint(lg) {
+        padding: 20px 0;
+    }
+    @include abstracts.breakpoint(sm) {
+        padding: 16px;
+        justify-content: space-between;
+        padding-left: 21px;
+        padding-right: 21px;
+    }
+
+    &__more {
+        display: none;
+        @include abstracts.breakpoint(lg) {
+            display: block;
+            margin-right: 80px;
+            transform: scale(1.3);
+        }
+        @include abstracts.breakpoint(sm) {
+            margin: 0;
+        }
+    }
+}
+
+.navbar {
+    margin-left: 144px;
+    @include abstracts.breakpoint(xl) {
+        margin-left: 50px;
+    }
+    @include abstracts.breakpoint(sm) {
+        display: none;
+    }
+
+    // navbar__list
+    &__list {
+        @extend %flexItemsCenter;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 30px;
+        @include abstracts.breakpoint(lg) {
+            display: none;
+        }
+        color: red;
+    }
+    &__link {
+        color: var(--secondary-color-secondary-1, #1a162e);
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+        @extend %flexItemsCenter;
+        gap: 6px;
+        color: var(--text-color);
+    }
+    &__arrow {
+        margin-top: 3px;
+    }
+}
+
+.top-act {
+    @extend %flexItemsCenter;
+    justify-content: space-between;
+    margin-left: auto;
+    @include abstracts.breakpoint(sm) {
+        margin: 0;
+    }
+
+    &__search-btn {
+        border-radius: 8px;
+        height: 30px;
+        cursor: pointer;
+    }
+    &__group {
+        @extend %flexItemsCenter;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding: 10px 20px;
+        background: var(--top-act-group-bg-color);
+        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
+        cursor: pointer;
+        @include abstracts.breakpoint(md) {
+            display: none;
+        }
+    }
+    &__group--single {
+        margin: 0 20px;
+        padding: 10px 10px;
+        @include abstracts.breakpoint(lg) {
+            display: none;
+        }
+    }
+    &__heart {
+        @extend %flexItemsCenter;
+    }
+    &__heart-btn {
+        height: 30px;
+    }
+    &__title {
+        display: inline-block;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+        margin-left: 10px;
+    }
+    &__separate {
+        width: 2px;
+        height: 30px;
+        margin: 0 20px;
+        background: var(--top-act-group-separate);
+    }
+    &__cart {
+        margin-right: 10px;
+        @extend %flexItemsCenter;
+    }
+    &__user {
+        cursor: pointer;
+    }
+    &__avatar {
+        margin-left: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        object-fit: cover;
+        @include abstracts.breakpoint(sm) {
+            margin: 0;
+        }
+    }
+}
