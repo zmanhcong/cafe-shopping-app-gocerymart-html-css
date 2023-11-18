@@ -147,6 +147,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  background: var(--body-bg);
 }
 
 a,
@@ -1362,9 +1363,13 @@ html {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 14px;
   cursor: pointer;
+}
+@media (max-width: 991.98px) {
+  .logo__img {
+    width: 24px;
+  }
 }
 .logo__title {
   color: var(--text-color);
