@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .dropdown {
     position: absolute;
     left: 0;
@@ -11,7 +13,8 @@
         --inner-max-height: min(582px, 100vh - 158px);
         --inner-padding: 30px;
 
-        max-height: var(--inner-max-height);
+        height: var(--inner-max-height);
+        // max-height: var(--inner-max-height);
         padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
@@ -30,12 +33,17 @@
 }
 
 .top-menu {
+    --main-column-width: 292px;
     // inherit height:  of "dropdown__inner", but not include padding-size
     max-height: calc(var(--inner-max-height) - var(--inner-padding));
+
+    // position use for sub-menu
+    position: relative;
+
     &__main {
         // inherit height:  of top-menu;
         max-height: inherit;
-        width: 292px;
+        width: var(--main-column-width);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -44,12 +52,18 @@
 .menu-column {
     display: flex;
     gap: 14px;
-
+    // .menu-column + .menu-column
+    & + & {
+        padding-top: 30px;
+    }
     &__icon {
         flex-shrink: 0;
         position: relative;
         height: 36px;
         width: 36px;
+        @include abstracts.breakpoint(xl) {
+            display: none;
+        }
     }
     &__icon1 {
         width: 30px;
@@ -74,16 +88,42 @@
     }
     &__list {
         margin-top: 26px;
-        &-link {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 142.857%;
-            display: block;
+
+        &-item {
+            &:hover > &-link {
+                color: #0071dc;
+                font-weight: 500;
+            }
+            &:hover .sub-menu {
+                display: grid;
+            }
+            // .menu-column__list-item + menu-column__list-item
+            & + & {
+                padding-top: 14px;
+            }
+
+            &-link {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 142.857%;
+                display: block;
+            }
         }
-    }
-    &__list-link:hover {
-        color: #0071dc;
-        font-weight: 500;
         line-height: 142.857%;
+    }
+}
+
+.sub-menu {
+    padding-left: var(--inner-padding);
+    position: absolute;
+    left: var(--main-column-width);
+    top: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: calc(var(--inner-max-height) - var(--inner-padding));
+    overflow-y: auto;
+    &__column {
+        padding-left: 10px;
     }
 }
