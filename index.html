@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,8 +46,33 @@
         <!-- Main -->
         <!-- <h1>Home page</h1> -->
 
+        <div class="theme_setting">
+            <!-- Settings Button -->
+            <button id="settings-btn" class="settings-button">
+                <img
+                    src="https://png.pngtree.com/element_our/png/20190103/vector-setting-icon-png_309695.jpg"
+                    alt="Settings"
+                    class="settings-button-icon"
+                />
+            </button>
+
+            <!-- Theme Modal -->
+            <div id="theme_modal" class="themeModal">
+                <div class="themeModal__content">
+                    <h2>Select Theme</h2>
+                    <div class="themeModal__separate"></div>
+                    <button id="light-theme" class="themeModal__light-button">
+                        Light
+                    </button>
+                    <button id="dark-theme" class="themeModal__dark-button">
+                        Dark
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer -->
-        <footer id="footer"></footer>
+        <footer id="footer" class="footer-test"></footer>
         <script>
             load("#footer", "./templates/footer.html");
         </script>

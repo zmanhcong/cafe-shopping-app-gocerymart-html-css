@@ -1,0 +1,76 @@
+.footer-test {
+    position: relative;
+}
+
+.theme_setting {
+    width: 300px;
+    height: 150px;
+    margin: 50px;
+}
+
+.settings-button {
+    &-icon {
+        height: 40px;
+        width: auto;
+        object-fit: cover;
+        border-radius: 100px;
+
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+.themeModal {
+    background-color: #fff;
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    box-shadow: 1px -3px 29px -5px rgba(0, 0, 0, 0.41);
+
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    &__separate {
+        margin-top: 8px;
+        height: 2px;
+        width: 100%;
+        background: #eceaea;
+    }
+    // visible when click to setting icon
+    &--visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__content {
+        h2 {
+            padding-top: 20px;
+            font-size: 1.6rem;
+            color: rgb(66, 186, 200);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__light-button {
+        margin: 20px 40px;
+        padding: 10px 20px;
+        background-color: rgb(211, 211, 233);
+        color: #000;
+        border-radius: 10px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+    &__dark-button {
+        padding: 10px 20px;
+        background-color: rgb(6, 15, 50);
+        color: white;
+        border-radius: 10px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}

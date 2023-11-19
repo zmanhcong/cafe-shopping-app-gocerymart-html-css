@@ -10,6 +10,7 @@
 
 .top-bar {
     @extend %flexItemsCenter;
+    position: relative;
 
     padding: 30px 0;
     @include abstracts.breakpoint(lg) {
@@ -50,14 +51,25 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        gap: 30px;
         @include abstracts.breakpoint(lg) {
             display: none;
         }
-        color: red;
     }
+
+    &__item {
+        padding: 20px 15px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+        &:hover .dropdown {
+            display: block;
+        }
+    }
+
     &__link {
-        color: var(--secondary-color-secondary-1, #1a162e);
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;

@@ -1,0 +1,89 @@
+.dropdown {
+    position: absolute;
+    left: 0;
+    padding-top: 54px;
+    width: min(1240px, 100%);
+    // max-width: 1240px;
+    // display: none;
+
+    left: 0;
+    &__inner {
+        --inner-max-height: min(582px, 100vh - 158px);
+        --inner-padding: 30px;
+
+        max-height: var(--inner-max-height);
+        padding: var(--inner-padding);
+        border-radius: 20px;
+        background: var(--dropdown-bg-color);
+        box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+        color: var(--text-color);
+        position: relative;
+    }
+    &__inner::before {
+        content: url("../icon/mega-menu-arrow.svg");
+        position: absolute;
+        top: -13px;
+        left: var(--arrow-left-pos);
+        translate: -50%;
+        filter: var(--dropdown-arrow-color);
+    }
+}
+
+.top-menu {
+    // inherit height:  of "dropdown__inner", but not include padding-size
+    max-height: calc(var(--inner-max-height) - var(--inner-padding));
+    &__main {
+        // inherit height:  of top-menu;
+        max-height: inherit;
+        width: 292px;
+        border-right: 1px solid var(--top-menu-border-color);
+        overflow-y: auto;
+    }
+}
+
+.menu-column {
+    display: flex;
+    gap: 14px;
+
+    &__icon {
+        flex-shrink: 0;
+        position: relative;
+        height: 36px;
+        width: 36px;
+    }
+    &__icon1 {
+        width: 30px;
+        height: 30px;
+    }
+    &__icon2 {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        filter: var(--menu-column-icon-color);
+    }
+    &__content {
+        flex: 1;
+        margin-top: 6px;
+    }
+    &__heading {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    &__list {
+        margin-top: 26px;
+        &-link {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 142.857%;
+            display: block;
+        }
+    }
+    &__list-link:hover {
+        color: #0071dc;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+}

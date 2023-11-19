@@ -1,25 +1,17 @@
 <div class="container">
     <div class="top-bar">
         <div class="top-bar__more">
-            <img
-                src="./assets/icon/more.svg"
-                alt=""
-                class="icon top-bar__more-icon"
-            />
+            <img src="./assets/icon/more.svg" alt="" class="icon top-bar__more-icon" />
         </div>
         <div class="logo">
-            <img
-                src="./assets/icon/logo.png"
-                alt="grocerymart"
-                class="logo__img"
-            />
+            <img src="./assets/icon/logo.png" alt="grocerymart" class="logo__img" />
             <h1 class="logo__title">grocerymart</h1>
         </div>
 
         <!-- Navbar -->
         <navbar class="navbar">
-            <ul class="navbar__list">
-                <li>
+            <ul class="navbar__list js-dropdown-list">
+                <li class="navbar__item">
                     <a class="navbar__link" href="">
                         Departments
                         <img
@@ -28,26 +20,187 @@
                             class="icon navbar__arrow"
                         />
                     </a>
+                    <!-- Mega menu -->
+                    <div class="dropdown">
+                        <div class="dropdown__inner">
+                            <div class="top-menu">
+                                <div class="top-menu__main">
+                                    <!-- Menu column -->
+                                    <div class="menu-column">
+                                        <div class="menu-column__icon">
+                                            <img
+                                                src="./assets/img/mega-menu-cate-1.1.svg"
+                                                alt=""
+                                                class="menu-column__icon1"
+                                            />
+                                            <img
+                                                src="./assets/img/mega-menu-cate-1.2.svg"
+                                                alt=""
+                                                class="menu-column__icon2"
+                                            />
+                                        </div>
+                                        <div class="menu-column__content">
+                                            <h2 class="menu-column__heading">
+                                                All Departments
+                                            </h2>
+                                            <ul class="menu-column__list">
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Savings & Featured Shops
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Electronics
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Clothing, Shoes & Accessories
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Home, Furniture & Appliances
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Toys & Video Games
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Home Improvement
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Baby
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Household Essentials
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Personal Care
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Patio & Garden
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Sports & Outdoors
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Gift Cards
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Auto, Tires and Industrial
+                                                    </a>
+                                                </li>
+                                                <li class="menu-column__list-item">
+                                                    <a
+                                                        href=""
+                                                        class="menu-column__list-link"
+                                                    >
+                                                        Movies, Music & Books
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li>
-                    <a class="navbar__link" href=""
-                        >Grocery
+
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">
+                        Grocery
                         <img
                             src="./assets/icon/arrow-down.svg"
                             alt=""
                             class="icon navbar__arrow"
                         />
                     </a>
+                    <!-- Mega menu -->
+                    <div class="dropdown" hidden>
+                        <div class="dropdown__inner">
+                            Lorem2, ipsum dolor sit amet consectetur adipisicing elit.
+                            Aspernatur explicabo laudantium vitae aperiam maiores
+                            praesentium ea doloribus impedit, cum voluptates accusantium,
+                        </div>
+                    </div>
                 </li>
-                <li>
-                    <a class="navbar__link" href=""
-                        >Beauty
+                <li class="navbar__item">
+                    <a class="navbar__link" href="">
+                        Beauty
                         <img
                             src="./assets/icon/arrow-down.svg"
                             alt=""
                             class="icon navbar__arrow"
                         />
                     </a>
+                    <!-- Mega menu -->
+                    <div class="dropdown" hidden>
+                        <div class="dropdown__inner">
+                            Lorem3, raesentium ea dolipsum dolor sit amet consectetur
+                            adipisicing elit. Aspernatur explicabo lauentiumdantium vitae
+                            aperiam maios impedit,res praesentium ea doloribus impedit,
+                            cum voluptates accusantium,
+                        </div>
+                    </div>
                 </li>
             </ul>
         </navbar>
@@ -86,7 +239,7 @@
             </div>
             <div class="top-act__user">
                 <img
-                    src="https://plus.unsplash.com/premium_photo-1669879825881-6d4e4bde67d5?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1589525231707-f2de2428f59c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt=""
                     class="top-act__avatar"
                 />
