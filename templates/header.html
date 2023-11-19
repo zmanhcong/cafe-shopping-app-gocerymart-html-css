@@ -1,18 +1,21 @@
 <div class="container">
     <div class="top-bar">
-        <div class="top-bar__more">
+        <button class="top-bar__more js-toggle" toggle-target="#navbar">
             <img src="./assets/icon/more.svg" alt="" class="icon top-bar__more-icon" />
-        </div>
+        </button>
         <div class="logo">
             <img src="./assets/icon/logo.png" alt="grocerymart" class="logo__img" />
             <h1 class="logo__title">grocerymart</h1>
         </div>
 
         <!-- Navbar -->
-        <navbar class="navbar">
+        <nav id="navbar" class="navbar hide">
+            <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                <img src="./assets/icon/arrow-left.svg" alt="" class="navbar__close-btn-icon" />
+            </button>
             <ul class="navbar__list js-dropdown-list">
                 <li class="navbar__item">
-                    <a class="navbar__link" href="">
+                    <a class="navbar__link" href="#!">
                         Departments
                         <img src="./assets/icon/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -5529,7 +5532,7 @@
                 </li>
 
                 <li class="navbar__item">
-                    <a class="navbar__link" href="">
+                    <a class="navbar__link" href="#!">
                         Grocery
                         <img src="./assets/icon/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -5912,7 +5915,7 @@
                     </div>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="">
+                    <a class="navbar__link" href="#!">
                         Beauty
                         <img src="./assets/icon/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -6224,9 +6227,11 @@
                     </div>
                 </li>
             </ul>
-        </navbar>
-        <!-- Navbar on tablet -->
-        <navbar class="navbar__overlay"> </navbar>
+        </nav>
+
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar">
+            <!-- overlay on tablet -->
+        </div>
 
         <!-- Navbar Action -->
         <div class="top-act">
