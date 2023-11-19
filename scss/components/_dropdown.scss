@@ -6,7 +6,8 @@
     padding-top: 54px;
     width: min(1240px, 100%);
     // max-width: 1240px;
-    display: none;
+
+    // display: none;
 
     left: 0;
     &__inner {
@@ -126,5 +127,11 @@
     overflow-y: auto;
     &__column {
         padding-left: 10px;
+    }
+    &--not-main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: initial;
+        inset: initial;
     }
 }

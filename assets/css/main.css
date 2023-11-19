@@ -1470,7 +1470,6 @@ html {
   left: 0;
   padding-top: 54px;
   width: min(1240px, 100%);
-  display: none;
   left: 0;
 }
 .dropdown__inner {
@@ -1576,6 +1575,12 @@ html {
 }
 .sub-menu__column {
   padding-left: 10px;
+}
+.sub-menu--not-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: initial;
+  inset: initial;
 }
 
 /*# sourceMappingURL=main.css.map */
