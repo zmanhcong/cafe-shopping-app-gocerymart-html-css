@@ -126,3 +126,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 });
+
+/**
+ * Keep menu active when hovering
+ *
+ * How it work:
+ * 1. Add class "js-menu-list" to the main menu ul tag
+ * 2. Add class "js-dropdown" to the current "dropdown" class if you want to reset active items when hiding the menu
+ */
+window.addEventListener("template-loaded", handleActiveMenu);
+
+function handleActiveMenu() {
+    const dropdowns = $$(".js-dropdown");
+    const menus = $$(".js-menu-list");
+    const activeClass = "menu-column__list-item--active";
+
+    const removeActive = (menu) => {
+        menu.querySelector(`.${activeClass}`)?.classList.remove(activeClass);
+    };
+
+    const init = () => {
+        menus.forEach((menu) => {
+            const items = menu.children;
+            if (!items.length) return;
+
+            removeActive(menu);
+            items[0].classList.add(activeClass);
+
+            Array.from(items).forEach((item) => {
+                item.onmouseenter = () => {
+                    if (window.innerWidth <= 991) return;
+                    removeActive(menu);
+                    item.classList.add(activeClass);
+                };
+            });
+        });
+    };
+
+    init();
+
+    dropdowns.forEach((dropdown) => {
+        dropdown.onmouseleave = () => init();
+    });
+}

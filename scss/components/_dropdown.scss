@@ -6,7 +6,7 @@
     padding-top: 54px;
     width: min(1240px, 100%);
     // max-width: 1240px;
-    // display: none;
+    display: none;
 
     left: 0;
     &__inner {
@@ -79,7 +79,6 @@
     }
     &__content {
         flex: 1;
-        margin-top: 6px;
     }
     &__heading {
         font-size: 1.5rem;
@@ -87,14 +86,17 @@
         line-height: 24px;
     }
     &__list {
-        margin-top: 26px;
+        padding-top: 23px;
+        padding-right: 6px;
 
         &-item {
+            &--active > &-link,
             &:hover > &-link {
                 color: #0071dc;
                 font-weight: 500;
             }
-            &:hover .sub-menu {
+            // "menu-column__list-item--active"が生成される場合は“display: grid;”が有効になる。
+            &--active .sub-menu {
                 display: grid;
             }
             // .menu-column__list-item + menu-column__list-item
@@ -116,12 +118,11 @@
 .sub-menu {
     padding-left: var(--inner-padding);
     position: absolute;
-    left: var(--main-column-width);
-    top: 0;
+    inset: 0 0 0 var(--main-column-width);
 
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
-    max-height: calc(var(--inner-max-height) - var(--inner-padding));
+    max-height: calc(var(--inner-max-height) + 60px - var(--inner-padding));
     overflow-y: auto;
     &__column {
         padding-left: 10px;
