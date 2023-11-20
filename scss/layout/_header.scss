@@ -41,9 +41,6 @@
     @include abstracts.breakpoint(xl) {
         margin-left: 50px;
     }
-    @include abstracts.breakpoint(sm) {
-        display: none;
-    }
 
     // Tablet drawer navbar
     @include abstracts.breakpoint(lg) {
@@ -94,7 +91,6 @@
         align-items: center;
         height: 100%;
         @include abstracts.breakpoint(lg) {
-            // display: none;
             flex-direction: column;
             justify-content: start;
             align-items: flex-start;
@@ -158,7 +154,7 @@
 
     &__search-btn {
         border-radius: 8px;
-        height: 30px;
+        // height: 30px;
         cursor: pointer;
     }
     &__group {
@@ -169,25 +165,17 @@
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
         cursor: pointer;
-        @include abstracts.breakpoint(md) {
-            display: none;
-        }
-        @include abstracts.breakpoint(lg) {
-            // display: block;
-        }
     }
     &__group--single {
         margin: 0 20px;
         padding: 10px 10px;
-        @include abstracts.breakpoint(lg) {
-            display: none;
-        }
     }
     &__heart {
         @extend %flexItemsCenter;
     }
     &__heart-btn {
-        height: 30px;
+        // height: 30px;
+        cursor: pointer;
     }
     &__title {
         display: inline-block;

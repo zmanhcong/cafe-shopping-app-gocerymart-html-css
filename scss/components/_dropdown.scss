@@ -63,7 +63,7 @@
         height: 36px;
         width: 36px;
         @include abstracts.breakpoint(xl) {
-            display: none;
+            // display: none;
         }
     }
     &__icon1 {
