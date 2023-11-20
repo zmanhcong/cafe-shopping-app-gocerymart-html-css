@@ -5,48 +5,61 @@
     left: 0;
     padding-top: 54px;
     width: min(1240px, 100%);
-    // max-width: 1240px;
 
     display: none;
+    @include abstracts.breakpoint(lg) {
+        display: block;
+        position: initial;
+        padding-top: 0;
+    }
 
     left: 0;
     &__inner {
-        --inner-max-height: min(582px, 100vh - 158px);
         --inner-padding: 30px;
 
-        height: var(--inner-max-height);
-        // max-height: var(--inner-max-height);
         padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
         color: var(--text-color);
         position: relative;
-    }
-    &__inner::before {
-        content: url("../icon/mega-menu-arrow.svg");
-        position: absolute;
-        top: -13px;
-        left: var(--arrow-left-pos);
-        translate: -50%;
-        filter: var(--dropdown-arrow-color);
+
+        &::before {
+            content: url("../icon/mega-menu-arrow.svg");
+            position: absolute;
+            top: -13px;
+            left: var(--arrow-left-pos);
+            translate: -50%;
+            filter: var(--dropdown-arrow-color);
+        }
+        @include abstracts.breakpoint(lg) {
+            border-radius: 0;
+            box-shadow: none;
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 
 .top-menu {
     --main-column-width: 292px;
-    // inherit height:  of "dropdown__inner", but not include padding-size
-    max-height: calc(var(--inner-max-height) - var(--inner-padding));
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
 
     // position use for sub-menu
     position: relative;
 
     &__main {
-        // inherit height:  of top-menu;
-        max-height: inherit;
         width: var(--main-column-width);
+        height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
+        @include abstracts.breakpoint(lg) {
+            // overflow-y: visible;
+            border-right: none;
+            height: auto;
+            width: 100%;
+        }
     }
 }
 
@@ -57,12 +70,19 @@
     & + & {
         padding-top: 30px;
     }
+    @include abstracts.breakpoint(lg) {
+        margin-top: 14px;
+        & + & {
+            padding-top: 30px;
+        }
+        margin-top: 0;
+    }
     &__icon {
         flex-shrink: 0;
         position: relative;
         height: 36px;
         width: 36px;
-        @include abstracts.breakpoint(xl) {
+        @include abstracts.breakpoint(lg) {
             // display: none;
         }
     }
@@ -89,7 +109,6 @@
     &__list {
         padding-top: 23px;
         padding-right: 6px;
-
         &-item {
             &--active > &-link,
             &:hover > &-link {
@@ -103,6 +122,10 @@
             // .menu-column__list-item + menu-column__list-item
             & + & {
                 padding-top: 14px;
+            }
+
+            @include abstracts.breakpoint(lg) {
+                // padding-left: 0;
             }
 
             &-link {
@@ -125,9 +148,19 @@
     grid-template-columns: repeat(3, 1fr);
     max-height: calc(var(--inner-max-height) + 60px - var(--inner-padding));
     overflow-y: auto;
+
+    @include abstracts.breakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+
     &__column {
         & + & {
             padding-left: 10px;
+        }
+        @include abstracts.breakpoint(lg) {
+            padding-top: 36px;
         }
     }
     &--not-main {
@@ -140,6 +173,9 @@
         padding-left: 0;
         &__column {
             padding-left: 0;
+        }
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
         }
     }
 }

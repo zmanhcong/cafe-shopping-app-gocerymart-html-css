@@ -48,7 +48,7 @@
         position: fixed;
         inset: 0 50% 0 0;
         z-index: 9;
-        background: rgb(250, 247, 247);
+        background: white;
         margin-left: 0;
         padding-top: 20px;
         transition: translate 0.5s;
@@ -89,7 +89,9 @@
         @extend %flexItemsCenter;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        overflow-y: auto;
+        height: calc(100% - 26px);
+
         @include abstracts.breakpoint(lg) {
             flex-direction: column;
             justify-content: start;
@@ -109,18 +111,14 @@
             display: block;
         }
         @include abstracts.breakpoint(lg) {
-            padding: 15px 40px;
+            padding: 15px 20px;
             &:first-child {
-                padding-left: 40px;
+                padding-left: 20px;
             }
             &:last-child {
-                padding-right: 40px;
+                padding-right: 20px;
             }
             width: 100%;
-
-            &:hover .dropdown {
-                display: none;
-            }
         }
     }
 
