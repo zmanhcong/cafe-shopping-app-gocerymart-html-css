@@ -38,7 +38,7 @@
             &::before {
                 content: none;
             }
-            padding: 20px 0 0 0;
+            padding: 0;
         }
     }
 }
@@ -162,6 +162,9 @@
         }
         @include abstracts.breakpoint(lg) {
             padding-top: 6px;
+            & + & {
+                padding-left: 0;
+            }
         }
     }
     &--not-main {
