@@ -151,13 +151,21 @@ function handleActiveMenu() {
             if (!items.length) return;
 
             removeActive(menu);
-            items[0].classList.add(activeClass);
+            // Add class "activeClass" to first item as default.
+            if (window.innerWidth > 991) items[0].classList.add(activeClass);
 
+            // Add class "activeClass" to items when hover.
             Array.from(items).forEach((item) => {
                 item.onmouseenter = () => {
                     if (window.innerWidth <= 991) return;
                     removeActive(menu);
                     item.classList.add(activeClass);
+                };
+                item.onclick = () => {
+                    if (window.innerWidth > 991) return;
+                    removeActive(menu);
+                    item.classList.add(activeClass);
+                    item.scrollIntoView();
                 };
             });
         });
@@ -198,3 +206,17 @@ function initJsToggle() {
         };
     });
 }
+
+// Toggle the visibility of the ".dropdown" adjacent(sibling element) to the clicked .navbar__link
+window.addEventListener("template-loaded", () => {
+    // Get all ".navbar__link" class
+    const navbar_links = $$(".js-dropdown-list > li > a");
+
+    navbar_links.forEach((link) => {
+        link.onclick = () => {
+            if (window.innerWidth > 991) return;
+            const item = link.closest("li");
+            item.classList.toggle("navbar__item--active");
+        };
+    });
+});

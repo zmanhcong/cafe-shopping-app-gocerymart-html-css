@@ -7,8 +7,8 @@
     width: min(1240px, 100%);
 
     display: none;
+
     @include abstracts.breakpoint(lg) {
-        display: block;
         position: initial;
         padding-top: 0;
     }
@@ -38,6 +38,7 @@
             &::before {
                 content: none;
             }
+            padding: 20px 0 0 0;
         }
     }
 }
@@ -55,7 +56,6 @@
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
         @include abstracts.breakpoint(lg) {
-            // overflow-y: visible;
             border-right: none;
             height: auto;
             width: 100%;
@@ -109,6 +109,10 @@
     &__list {
         padding-top: 23px;
         padding-right: 6px;
+
+        @include abstracts.breakpoint(lg) {
+            padding-top: 20;
+        }
         &-item {
             &--active > &-link,
             &:hover > &-link {
@@ -122,10 +126,6 @@
             // .menu-column__list-item + menu-column__list-item
             & + & {
                 padding-top: 14px;
-            }
-
-            @include abstracts.breakpoint(lg) {
-                // padding-left: 0;
             }
 
             &-link {
@@ -158,9 +158,10 @@
     &__column {
         & + & {
             padding-left: 10px;
+            padding-top: 30px;
         }
         @include abstracts.breakpoint(lg) {
-            padding-top: 36px;
+            padding-top: 6px;
         }
     }
     &--not-main {

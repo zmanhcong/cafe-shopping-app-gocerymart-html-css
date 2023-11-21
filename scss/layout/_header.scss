@@ -89,8 +89,8 @@
         @extend %flexItemsCenter;
         justify-content: center;
         align-items: center;
+        height: calc(100% - 126px);
         overflow-y: auto;
-        height: calc(100% - 26px);
 
         @include abstracts.breakpoint(lg) {
             flex-direction: column;
@@ -110,8 +110,16 @@
         &:hover .dropdown {
             display: block;
         }
+
         @include abstracts.breakpoint(lg) {
-            padding: 15px 20px;
+            &:hover .dropdown {
+                display: none;
+            }
+            &--active .dropdown {
+                display: block !important;
+            }
+
+            padding: 15px 20px 0 20px;
             &:first-child {
                 padding-left: 20px;
             }
@@ -132,13 +140,18 @@
         @include abstracts.breakpoint(lg) {
             font-size: 1.6rem;
             line-height: 150%;
-        }
-        @include abstracts.breakpoint(lg) {
             justify-content: space-between;
         }
     }
     &__arrow {
         margin-top: 3px;
+        @include abstracts.breakpoint(lg) {
+            rotate: -90deg;
+            transition: rotate 0.3s ease;
+        }
+    }
+    &__item--active .navbar__arrow {
+        rotate: 0deg;
     }
 }
 
