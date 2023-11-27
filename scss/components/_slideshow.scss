@@ -1,0 +1,43 @@
+.slideshow {
+    overflow: hidden;
+    margin-top: 40px;
+    position: relative; // Added for positioning the buttons
+
+    &__inner {
+        display: flex;
+        // width: calc(1340px * (var(--total-slides) + 1)); // Use fixed width
+        width: calc(1340px * var(--total-slides)); // No need for +1 now
+        transition: margin-left 1s ease-in-out;
+        --total-slides: 3;
+    }
+
+    &__inner-img {
+        width: 1340px;
+        height: 455px;
+        object-fit: cover;
+        border-radius: 20px;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        padding: 15px 20px;
+        border-radius: 30%;
+
+        // Specific styles for each button
+        &--next {
+            right: 10px;
+        }
+
+        &--back {
+            left: 10px;
+        }
+    }
+}

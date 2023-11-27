@@ -1846,4 +1846,41 @@ html {
   }
 }
 
+.slideshow {
+  overflow: hidden;
+  margin-top: 40px;
+  position: relative;
+}
+.slideshow__inner {
+  display: flex;
+  width: calc(1340px * var(--total-slides));
+  transition: margin-left 1s ease-in-out;
+  --total-slides: 3;
+}
+.slideshow__inner-img {
+  width: 1340px;
+  height: 455px;
+  object-fit: cover;
+  border-radius: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.slideshow__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 15px 20px;
+  border-radius: 30%;
+}
+.slideshow__button--next {
+  right: 10px;
+}
+.slideshow__button--back {
+  left: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */
