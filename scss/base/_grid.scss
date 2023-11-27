@@ -1,20 +1,20 @@
 @use "sass:math";
 
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
     xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px,
+    xs: 0,
 );
 
 $container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1370px,
+    sm: 100%,
+    md: 540px,
+    lg: 720px,
+    xl: 960px,
+    xxl: 1140px,
 );
 
 // define common value
@@ -49,6 +49,7 @@ $gutters: (
 
 .container {
     @extend .container-fluid;
+    width: 1370px;
 }
 
 .row {
@@ -70,13 +71,13 @@ $gutters: (
 }
 // Create Breakpoint @media
 @mixin make-media-query($dimension) {
-    @media (min-width: $dimension) {
+    @media (max-width: ($dimension - 0.02)) {
         @content;
     }
 }
 
 // Setting for use case: class="row row-cols-1 row-cols-md-2 row-cols-lg-4"
-@mixin make-row-columns($infix) {
+@mixin make-row-columns($infix: null) {
     @for $i from 1 through $grid-columns * 0.5 {
         .row-cols#{$infix}-#{$i} > * {
             flex: 0 0 auto;
@@ -86,7 +87,7 @@ $gutters: (
 }
 
 // Setting for use case: class="col-(sm,lg.xx)-4" for column
-@mixin make-columns($infix) {
+@mixin make-columns($infix: null) {
     @for $i from 1 through $grid-columns {
         .col#{$infix}-#{$i} {
             flex: 0 0 auto;
@@ -96,7 +97,7 @@ $gutters: (
 }
 
 // Offsets: Move item to right with margin-left;
-@mixin make-offsets($infix) {
+@mixin make-offsets($infix: null) {
     @for $i from 0 to $grid-columns {
         .offset#{$infix}-#{$i} {
             margin-left: if($i > 0, math.div(100%, $grid-columns) * $i, 0);
@@ -105,7 +106,7 @@ $gutters: (
 }
 
 // Gutters(x, y)
-@mixin make-gutters($infix) {
+@mixin make-gutters($infix: null) {
     @each $i, $ratio in $gutters {
         .g#{$infix}-#{$i},
         .gx#{$infix}-#{$i} {
@@ -119,13 +120,22 @@ $gutters: (
     }
 }
 
+@include make-row-columns();
+
+@include make-columns();
+
+@include make-offsets();
+
+@include make-gutters();
+
 @each $breakpoint, $dimension in $grid-breakpoints {
     $max-width: map-get(
         $map: $container-max-widths,
         $key: $breakpoint,
     );
     // except with "sx" screen. use @responsive with ".col-1" instead of ".col-xs-1"
-    $infix: if($breakpoint == xs, "", "-#{$breakpoint}");
+    // $infix: if($breakpoint == xs, "", "-#{$breakpoint}");
+    $infix: "-#{$breakpoint}";
 
     @include make-media-query($dimension) {
         .container {
