@@ -92,10 +92,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const themeModal = document.getElementById("theme_modal");
     const lightThemeBtn = document.getElementById("light-theme");
     const darkThemeBtn = document.getElementById("dark-theme");
-
+    const settingsBtnIcon = document.querySelector(".settings-button-icon");
     // settingsBtn.addEventListener("click", () => {
     //     themeModal.classList.toggle("themeModal--visible");
     // });
+
+    settingsBtnIcon.addEventListener("click", function () {
+        this.classList.toggle("clicked");
+    });
+
     settingsBtn.addEventListener("click", () => {
         const isVisible = themeModal.classList.contains("themeModal--visible");
         if (isVisible) {
@@ -108,11 +113,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     lightThemeBtn.addEventListener("click", () => {
         document.documentElement.classList.remove("dark");
         themeModal.classList.remove("themeModal--visible");
+        settingsBtnIcon.classList.remove("clicked");
     });
 
     darkThemeBtn.addEventListener("click", () => {
         document.documentElement.classList.add("dark");
         themeModal.classList.remove("themeModal--visible");
+        settingsBtnIcon.classList.remove("clicked");
     });
 
     // Close the modal if a click occurs outside of it
@@ -126,6 +133,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 });
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     const settingsBtnIcon = document.querySelector(".settings-button-icon");
+
+//     settingsBtnIcon.addEventListener("click", function () {
+//         this.classList.toggle("clicked");
+//     });
+// });
 
 /**
  * Keep menu active when hovering

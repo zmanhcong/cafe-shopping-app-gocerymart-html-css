@@ -1,0 +1,59 @@
+.lavazza-list {
+    --grid-gutter-x: 30px;
+    --grid-gutter-y: 30px;
+}
+
+.lavazza-item {
+    padding: 16px;
+    border-radius: 20px;
+    background: var(--lavazza-item-color-background, #fff);
+    box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+
+    &__thumb {
+        height: 284px;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 16px;
+    }
+    &__info {
+        &-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 150%;
+            color: var(--text-color);
+        }
+        &-desc {
+            color: #9e9da8;
+
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 146.667%;
+            margin: 16px 0;
+        }
+        &-bottom {
+            display: flex;
+            align-items: center;
+            &-price {
+                color: var(--secondary-color-secondary-1, #1a162e);
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 150%;
+
+                color: var(--text-color);
+            }
+            &-rating {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-left: auto;
+                &-text {
+                    color: var(--text-color);
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}

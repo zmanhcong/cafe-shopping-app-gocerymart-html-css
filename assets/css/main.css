@@ -1768,6 +1768,7 @@ html.dark {
   --category-bg-color: #171c28;
   --category-thumb-bg-color: #292e39;
   --category-title-color: #fff;
+  --lavazza-item-color-background: #171c28;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1794,6 +1795,7 @@ html {
   --category-thumb-bg-color: #fff;
   --category-title-color: #000;
   --category-mobile-bg-color: #fff;
+  --lavazza-item-color-background: #fff;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1812,13 +1814,24 @@ html {
 }
 
 .settings-button-icon {
-  height: 40px;
+  font-size: 3rem;
+  padding: 12px;
   width: auto;
   object-fit: cover;
   border-radius: 100px;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  color: rgb(116, 207, 51);
+  bottom: 0px;
+  right: 0px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+.settings-button-icon:hover {
+  background: rgb(106, 111, 126);
+  transform: scale(1.05);
+}
+.settings-button-icon.clicked {
+  background-color: #ccbab8;
+  transform: scale(0.95);
 }
 
 .themeModal {
@@ -2185,6 +2198,61 @@ html {
     padding-right: 0;
     font-size: 1.4rem;
   }
+}
+
+.lavazza-list {
+  --grid-gutter-x: 30px;
+  --grid-gutter-y: 30px;
+}
+
+.lavazza-item {
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--lavazza-item-color-background, #fff);
+  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+}
+.lavazza-item__thumb {
+  height: 284px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+.lavazza-item__info-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--text-color);
+}
+.lavazza-item__info-desc {
+  color: #9e9da8;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 146.667%;
+  margin: 16px 0;
+}
+.lavazza-item__info-bottom {
+  display: flex;
+  align-items: center;
+}
+.lavazza-item__info-bottom-price {
+  color: var(--secondary-color-secondary-1, #1a162e);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--text-color);
+}
+.lavazza-item__info-bottom-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.lavazza-item__info-bottom-rating-text {
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
 }
 
 .home__container {

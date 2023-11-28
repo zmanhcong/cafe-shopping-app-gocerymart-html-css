@@ -32,4 +32,7 @@ html.dark {
     @include abstracts.screen(lg) {
         --category-bg-color: #171c28;
     }
+
+    // Lavazza item categories
+    --lavazza-item-color-background: #171c28;
 }

@@ -16,6 +16,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
 
+        <!-- Add awesome font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
 
@@ -71,7 +74,7 @@
                         <article class="cate-item">
                             <img src="./assets/img/categories/cate-thumb2.png" alt="" class="cate-item__thumb" />
                             <section class="cate-item__info">
-                                <h3 class="cate-item__title">$24 - $150</h3>
+                                <h3 class="cate-item__title">$37 - $160</h3>
                                 <p class="cate-item__desc">Grown on the Indonesian island of Sumatra.</p>
                             </section>
                         </article>
@@ -81,7 +84,7 @@
                         <article class="cate-item">
                             <img src="./assets/img/categories/cate-thumb3.png" alt="" class="cate-item__thumb" />
                             <section class="cate-item__info">
-                                <h3 class="cate-item__title">$24 - $150</h3>
+                                <h3 class="cate-item__title">$32 - $160</h3>
                                 <p class="cate-item__desc">
                                     Ethiopian Yirgacheffee Coffee. From The Birthplace of Coffee brings this coffee.
                                 </p>
@@ -91,10 +94,104 @@
                 </div>
             </section>
 
+            <!-- Total LavAzza 1320 -->
+            <section class="home__container">
+                <h2 class="home__heading">Total LavAzza 1320</h2>
+                <div class="row row-cols-4 row-cols-xl-2 row-cols-md-1 lavazza-list">
+                    <!-- Categories item 1 -->
+                    <div class="col">
+                        <div class="lavazza-item">
+                            <img src="./assets/img/categories/lavazza-thumb1.png" alt="" class="lavazza-item__thumb" />
+                            <section class="lavazza-item__info">
+                                <h3 class="lavazza-item__info-title">
+                                    Coffee Beans - Espresso Arabica and Robusta Beans
+                                </h3>
+                                <p class="lavazza-item__info-desc">Lavazza</p>
+                                <div class="lavazza-item__info-bottom">
+                                    <p class="lavazza-item__info-bottom-price">$47.00</p>
+                                    <div class="lavazza-item__info-bottom-rating">
+                                        <img src="./assets/img/categories/lavazza-thumb_Star.png" alt="" />
+                                        <p class="lavazza-item__info-bottom-rating-text">4.3</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Categories item 1 -->
+                    <div class="col">
+                        <div class="lavazza-item">
+                            <img src="./assets/img/categories/lavazza-thumb2.png" alt="" class="lavazza-item__thumb" />
+                            <section class="lavazza-item__info">
+                                <h3 class="lavazza-item__info-title">
+                                    Lavazza Coffee Blends - Try the Italian Espresso
+                                </h3>
+                                <p class="lavazza-item__info-desc">welikecoffee</p>
+                                <div class="lavazza-item__info-bottom">
+                                    <p class="lavazza-item__info-bottom-price">$53.00</p>
+                                    <div class="lavazza-item__info-bottom-rating">
+                                        <img src="./assets/img/categories/lavazza-thumb_Star.png" alt="" />
+                                        <p class="lavazza-item__info-bottom-rating-text">3.3</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Categories item 1 -->
+                    <div class="col">
+                        <div class="lavazza-item">
+                            <img src="./assets/img/categories/lavazza-thumb3.png" alt="" class="lavazza-item__thumb" />
+                            <section class="lavazza-item__info">
+                                <h3 class="lavazza-item__info-title">
+                                    Lavazza - Caffè Espresso Black Tin - Ground coffee
+                                </h3>
+                                <p class="lavazza-item__info-desc">Lavazza</p>
+                                <div class="lavazza-item__info-bottom">
+                                    <p class="lavazza-item__info-bottom-price">$47.00</p>
+                                    <div class="lavazza-item__info-bottom-rating">
+                                        <img src="./assets/img/categories/lavazza-thumb_Star.png" alt="" />
+                                        <p class="lavazza-item__info-bottom-rating-text">3.9</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- Categories item 1 -->
+                    <div class="col">
+                        <div class="lavazza-item">
+                            <img src="./assets/img/categories/lavazza-thumb4.png" alt="" class="lavazza-item__thumb" />
+                            <section class="lavazza-item__info">
+                                <h3 class="lavazza-item__info-title">
+                                    Qualità Oro Mountain Grown - Espresso Coffee Beans
+                                </h3>
+                                <p class="lavazza-item__info-desc">welikecoffee</p>
+                                <div class="lavazza-item__info-bottom">
+                                    <p class="lavazza-item__info-bottom-price">$47.00</p>
+                                    <div class="lavazza-item__info-bottom-rating">
+                                        <img src="./assets/img/categories/lavazza-thumb_Star.png" alt="" />
+                                        <p class="lavazza-item__info-bottom-rating-text">4.9</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Footer -->
             <footer id="footer" class="footer-test"></footer>
-            <script>
+            <!-- <script>
                 load("#footer", "./templates/footer.html");
+            </script> -->
+
+            <script>
+                // Assuming load is a function that loads the content and then runs a callback
+                load("#footer", "./templates/footer.html", function () {
+                    // This callback runs after the footer is loaded
+                    // Now it's safe to run the script that depends on the footer being present
+                    var script = document.createElement("script");
+                    script.src = "./assets/js/scripts.js";
+                    document.body.appendChild(script);
+                });
             </script>
         </div>
     </body>
