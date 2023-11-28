@@ -1,0 +1,22 @@
+.like-btn {
+    width: 50px;
+    height: 50px;
+    padding: 3px 2.503px 3.002px 2.5px;
+    fill: var(--secondary-color-background, #fff);
+    box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+    border-radius: 50%;
+
+    &--liked .product-card__like-btn-icon {
+        display: none;
+    }
+
+    // When the like-btn does not have the --liked modifier, hide the red icon
+    &:not(.like-btn--liked) .product-card__like-btn-red-icon {
+        display: none;
+    }
+
+    // When the like-btn has the --liked modifier, show the red icon
+    &.like-btn--liked .product-card__like-btn-red-icon {
+        display: block;
+    }
+}

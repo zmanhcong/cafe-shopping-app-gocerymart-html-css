@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -175,6 +176,7 @@ button {
   outline: none;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 a {
@@ -190,13 +192,27 @@ li {
   padding: 0;
 }
 
-.content-size {
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 15px;
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 
+/* 
+    How to use
+        1. Specify at row class. example → class="row row-cols-lg-4 row-cols-sm-2 row-cols-1"
+        2. Specify at col class. example → class="col-md-3", class="col-sm-12"
+        3. Can use Gutters:[g-*][g-x][g-y]. example: g-0, g-lg-3 that are remove padding between columns. example: class="row row-cols-lg-4 g-0"
+        4. Less than 576px, use .col-1 or .row-cols-1
+        5. Can specify both in row and column. example: 4 columns in row but item3 has col-6, mean 6/12 column size 
+            <div class="row row-cols-lg-4">
+                <div class="col-6">Item3</div>
+            </div>
+        6. If use .container-fluid, width: 100% at all breakpoints.(all time)
+        7.Offset dùng để đẩy item sang bên phải ứng với số cột. ta có offset-0 -> offset-11 
+
+*/
 .row > *, .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
   padding-right: calc(var(--grid-gutter-x) * 0.5);
@@ -1768,7 +1784,10 @@ html.dark {
   --category-bg-color: #171c28;
   --category-thumb-bg-color: #292e39;
   --category-title-color: #fff;
-  --lavazza-item-color-background: #171c28;
+  --product-card-color-background: #171c28;
+  --product-card__filter-color: #fff;
+  --product-card-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --product-filter-bg-color: #171c28;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1795,7 +1814,10 @@ html {
   --category-thumb-bg-color: #fff;
   --category-title-color: #000;
   --category-mobile-bg-color: #fff;
-  --lavazza-item-color-background: #fff;
+  --product-card-color-background: #fff;
+  --product-card__filter-color: #1a162e;
+  --product-card-box-shadow-color: rgba(237, 237, 246, 0.2);
+  --product-filter-bg-color: #fff;
 }
 @media (max-width: 991.98px) {
   html {
@@ -2113,10 +2135,6 @@ html {
   left: 10px;
 }
 
-.gutter-x {
-  --grid-gutter-x: 51px;
-  --grid-gutter-y: 20px;
-}
 @media (max-width: 1399.98px) {
   .gutter-x {
     --grid-gutter-x: 32px;
@@ -2135,6 +2153,7 @@ html {
   padding: 20px 26px;
   border-radius: 16px;
   height: 100%;
+  margin-top: 20px;
 }
 @media (max-width: 1199.98px) {
   .cate-item {
@@ -2165,6 +2184,7 @@ html {
 @media (max-width: 767.98px) {
   .cate-item__thumb {
     margin: 0;
+    height: 88px;
     width: auto;
   }
 }
@@ -2200,30 +2220,58 @@ html {
   }
 }
 
-.lavazza-list {
-  --grid-gutter-x: 30px;
-  --grid-gutter-y: 30px;
+.product-filter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--product-filter-bg-color);
+}
+.product-filter__title {
+  color: var(--product-card__filter-color);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 142.857%;
+}
+.product-filter__icon {
+  color: var(--product-card__filter-color);
 }
 
-.lavazza-item {
+.product-card {
   padding: 16px;
   border-radius: 20px;
-  background: var(--lavazza-item-color-background, #fff);
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  background: var(--product-card-color-background, #fff);
+  box-shadow: 0px 20px 60px 10px var(--product-card-box-shadow-color);
 }
-.lavazza-item__thumb {
+.product-card__img-wrap {
+  margin-bottom: 16px;
+  position: relative;
+}
+.product-card__thumb {
   height: 284px;
   width: 100%;
   object-fit: contain;
-  margin-bottom: 16px;
 }
-.lavazza-item__info-title {
+.product-card__like-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.product-card__like-btn-red-icon {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+}
+.product-card__info-title {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 150%;
   color: var(--text-color);
 }
-.lavazza-item__info-desc {
+.product-card__info-brand {
   color: #9e9da8;
   font-size: 1.5rem;
   font-style: normal;
@@ -2231,28 +2279,46 @@ html {
   line-height: 146.667%;
   margin: 16px 0;
 }
-.lavazza-item__info-bottom {
+.product-card__info-bottom {
   display: flex;
   align-items: center;
 }
-.lavazza-item__info-bottom-price {
+.product-card__info-bottom-price {
   color: var(--secondary-color-secondary-1, #1a162e);
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 150%;
   color: var(--text-color);
 }
-.lavazza-item__info-bottom-rating {
+.product-card__info-bottom-rating {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-left: auto;
 }
-.lavazza-item__info-bottom-rating-text {
+.product-card__info-bottom-rating-text {
   color: var(--text-color);
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 150%;
+}
+
+.like-btn {
+  width: 50px;
+  height: 50px;
+  padding: 3px 2.503px 3.002px 2.5px;
+  fill: var(--secondary-color-background, #fff);
+  box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+  border-radius: 50%;
+}
+.like-btn--liked .product-card__like-btn-icon {
+  display: none;
+}
+.like-btn:not(.like-btn--liked) .product-card__like-btn-red-icon {
+  display: none;
+}
+.like-btn.like-btn--liked .product-card__like-btn-red-icon {
+  display: block;
 }
 
 .home__container {
@@ -2263,13 +2329,17 @@ html {
   font-style: normal;
   font-weight: 700;
   line-height: 141.667%;
-  margin-bottom: 20px;
   color: var(--text-color);
 }
 @media (max-width: 991.98px) {
   .home__heading {
     font-size: 2.2rem;
   }
+}
+.home__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

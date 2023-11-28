@@ -1,3 +1,18 @@
+/* 
+    How to use
+        1. Specify at row class. example → class="row row-cols-lg-4 row-cols-sm-2 row-cols-1"
+        2. Specify at col class. example → class="col-md-3", class="col-sm-12"
+        3. Can use Gutters:[g-*][g-x][g-y]. example: g-0, g-lg-3 that are remove padding between columns. example: class="row row-cols-lg-4 g-0"
+        4. Less than 576px, use .col-1 or .row-cols-1
+        5. Can specify both in row and column. example: 4 columns in row but item3 has col-6, mean 6/12 column size 
+            <div class="row row-cols-lg-4">
+                <div class="col-6">Item3</div>
+            </div>
+        6. If use .container-fluid, width: 100% at all breakpoints.(all time)
+        7.Offset dùng để đẩy item sang bên phải ứng với số cột. ta có offset-0 -> offset-11 
+
+*/
+
 @use "sass:math";
 
 $grid-breakpoints: (
@@ -21,6 +36,7 @@ $container-max-widths: (
 $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 
+// Gutters = $grid-gutter-width * ratio. exg: 30px * 0.5 = 15px;
 $gutters: (
     0: 0,
     1: 0.25,
@@ -105,7 +121,7 @@ $gutters: (
     }
 }
 
-// Gutters(x, y)
+// Gutters(example: gx-3, gy-md-2)
 @mixin make-gutters($infix: null) {
     @each $i, $ratio in $gutters {
         .g#{$infix}-#{$i},

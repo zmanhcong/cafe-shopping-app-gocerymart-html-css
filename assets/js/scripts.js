@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             themeModal.classList.contains("themeModal--visible")
         ) {
             themeModal.classList.remove("themeModal--visible");
+            settingsBtnIcon.classList.remove("clicked");
         }
     });
 });

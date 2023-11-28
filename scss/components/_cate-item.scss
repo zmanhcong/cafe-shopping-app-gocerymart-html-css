@@ -1,8 +1,8 @@
 @use "../abstracts";
 
 .gutter-x {
-    --grid-gutter-x: 51px;
-    --grid-gutter-y: 20px;
+    // --grid-gutter-x: 51px;
+    // --grid-gutter-y: 20px;
 
     @include abstracts.screen(xxl) {
         --grid-gutter-x: 32px;
@@ -19,6 +19,7 @@
     padding: 20px 26px;
     border-radius: 16px;
     height: 100%;
+    margin-top: 20px;
 
     @include abstracts.screen(xl) {
         flex-direction: column;
@@ -45,6 +46,7 @@
         }
         @include abstracts.screen(md) {
             margin: 0;
+            height: 88px;
             width: auto;
         }
     }
