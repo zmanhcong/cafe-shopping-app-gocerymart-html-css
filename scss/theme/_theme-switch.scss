@@ -1,7 +1,6 @@
-.footer-test {
-    // position: relative;
+.footer__inner {
+    position: relative;
 }
-
 .theme_setting {
     width: 300px;
     height: 150px;
@@ -14,8 +13,8 @@
         width: auto;
         object-fit: cover;
         border-radius: 100px;
-
         position: absolute;
+
         bottom: 10px;
         right: 10px;
     }
