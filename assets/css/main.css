@@ -1788,6 +1788,9 @@ html.dark {
   --product-card__filter-color: #fff;
   --product-card-box-shadow-color: rgba(0, 0, 0, 0.2);
   --product-filter-bg-color: #171c28;
+  --filter-input-border-color: #fff;
+  --filter-backgroud: #292e39;
+  --filter-shadow: rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1818,6 +1821,9 @@ html {
   --product-card__filter-color: #1a162e;
   --product-card-box-shadow-color: rgba(237, 237, 246, 0.2);
   --product-filter-bg-color: #fff;
+  --filter-input-border-color: #d2d1d6;
+  --filter-backgroud: #fff;
+  --filter-shadow: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -2220,11 +2226,100 @@ html {
   }
 }
 
+.product-filter-wrap {
+  margin-left: auto;
+  position: relative;
+}
+
+.filter-modal {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 1;
+  background: var(--filter-backgroud);
+  box-shadow: 10px 40px 90px var(--filter-shadow);
+  padding: 30px;
+  height: 362px;
+  border-radius: 20px;
+}
+.filter-modal__title {
+  color: var(--text-color);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 145.455%;
+}
+
+.filter-row {
+  margin-top: 30px;
+  display: flex;
+  align-items: start;
+  height: 162px;
+}
+.filter-form__label {
+  color: var(--text-color);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 145.455%;
+  margin-bottom: 20px;
+  display: block;
+}
+.filter-form__slider {
+  width: 100%;
+  background: #d2d1d6;
+  height: 1px;
+  margin: 20px 0;
+  position: relative;
+}
+.filter-form__slider::before, .filter-form__slider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 22px;
+  background: var(--filter-backgroud);
+  height: 22px;
+  border-radius: 50%;
+  border: 6px solid #ffb700;
+}
+.filter-form__slider::before {
+  left: var(--min-value, 20%);
+}
+.filter-form__slider::after {
+  left: var(--max-value, 80%);
+}
+.filter-form__group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.filter-form__group-label {
+  color: var(--text-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.857%;
+  display: block;
+  margin-bottom: 10px;
+}
+.filter-form__group-input {
+  border-radius: 6px;
+  display: flex;
+  width: 121px;
+  padding: 8px 12px;
+  border: 1px solid var(--filter-input-border-color);
+  background: var(--filter-backgroud);
+  color: var(--text-color);
+}
+.filter-col__separate {
+  margin: 0 30px;
+  height: 80%;
+  border: solid 1px #eee;
+}
+
 .product-filter {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-left: auto;
   padding: 6px 12px;
   border-radius: 6px;
   background: var(--product-filter-bg-color);

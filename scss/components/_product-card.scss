@@ -1,8 +1,106 @@
+.product-filter-wrap {
+    margin-left: auto;
+    position: relative;
+}
+
+.filter-modal {
+    position: absolute;
+
+    right: 0;
+    top: 50px;
+    z-index: 1;
+    background: var(--filter-backgroud);
+    box-shadow: 10px 40px 90px var(--filter-shadow);
+    padding: 30px;
+    height: 362px;
+    border-radius: 20px;
+
+    &__title {
+        color: var(--text-color);
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+    }
+}
+.filter {
+    &-row {
+        margin-top: 30px;
+        display: flex;
+        align-items: start;
+        height: 162px;
+    }
+    &-form {
+        &__label {
+            color: var(--text-color);
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 145.455%;
+            margin-bottom: 20px;
+            display: block;
+        }
+        &__slider {
+            width: 100%;
+            background: #d2d1d6;
+            height: 1px;
+            margin: 20px 0;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                width: 22px;
+                background: var(--filter-backgroud);
+                height: 22px;
+                border-radius: 50%;
+                border: 6px solid #ffb700;
+            }
+            &::before {
+                left: var(--min-value, 20%);
+            }
+            &::after {
+                left: var(--max-value, 80%);
+            }
+        }
+
+        &__group {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            &-label {
+                color: var(--text-color);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 142.857%;
+                display: block;
+                margin-bottom: 10px;
+            }
+            &-input {
+                border-radius: 6px;
+                display: flex;
+                width: 121px;
+                padding: 8px 12px;
+                border: 1px solid var(--filter-input-border-color);
+                background: var(--filter-backgroud);
+                color: var(--text-color);
+            }
+        }
+    }
+
+    &-col__separate {
+        margin: 0 30px;
+        height: 80%;
+        border: solid 1px #eee;
+    }
+}
+
 .product-filter {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-left: auto;
     padding: 6px 12px;
     border-radius: 6px;
     background: var(--product-filter-bg-color);

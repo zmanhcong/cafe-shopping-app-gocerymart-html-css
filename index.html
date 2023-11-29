@@ -62,7 +62,9 @@
                     <!-- Categories item 1 -->
                     <div class="col">
                         <article class="cate-item">
-                            <img src="./assets/img/categories/cate-thumb1.png" alt="" class="cate-item__thumb" />
+                            <a href="#!">
+                                <img src="./assets/img/categories/cate-thumb1.png" alt="" class="cate-item__thumb" />
+                            </a>
                             <div class="cate-item__info">
                                 <h3 class="cate-item__title">$24 - $150</h3>
                                 <p class="cate-item__desc">New sumatra mandeling coffe blend</p>
@@ -72,7 +74,9 @@
                     <!-- Categories item 2 -->
                     <div class="col">
                         <article class="cate-item">
-                            <img src="./assets/img/categories/cate-thumb2.png" alt="" class="cate-item__thumb" />
+                            <a href="#!">
+                                <img src="./assets/img/categories/cate-thumb2.png" alt="" class="cate-item__thumb" />
+                            </a>
                             <div class="cate-item__info">
                                 <h3 class="cate-item__title">$37 - $160</h3>
                                 <p class="cate-item__desc">Grown on the Indonesian island of Sumatra.</p>
@@ -82,7 +86,9 @@
                     <!-- Categories item 3 -->
                     <div class="col">
                         <article class="cate-item">
-                            <img src="./assets/img/categories/cate-thumb3.png" alt="" class="cate-item__thumb" />
+                            <a href="#!">
+                                <img src="./assets/img/categories/cate-thumb3.png" alt="" class="cate-item__thumb" />
+                            </a>
                             <div class="cate-item__info">
                                 <h3 class="cate-item__title">$32 - $160</h3>
                                 <p class="cate-item__desc">
@@ -98,10 +104,68 @@
             <section class="home__container">
                 <div class="home__row">
                     <h2 class="home__heading">Total LavAzza 1320</h2>
-                    <button class="product-filter">
-                        <span class="product-filter__title">Filter</span>
-                        <img src="./assets/icon/product-card--filter.svg" alt="" class="product-filter__icon icon" />
-                    </button>
+                    <div class="product-filter-wrap">
+                        <button class="product-filter">
+                            <span class="product-filter__title">Filter</span>
+                            <img
+                                src="./assets/icon/product-card--filter.svg"
+                                alt=""
+                                class="product-filter__icon icon"
+                            />
+                        </button>
+                        <section class="filter-modal">
+                            <h3 class="filter-modal__title">Filter</h3>
+                            <form action="" class="filter-form">
+                                <div class="filter-row">
+                                    <!-- filter col 1: Price -->
+                                    <div class="filter-col">
+                                        <label class="filter-form__label">Price</label>
+                                        <div
+                                            class="filter-form__slider"
+                                            style="--min-value: 20%; --max-value: 80%"
+                                        ></div>
+                                        <div class="filter-form__group">
+                                            <div>
+                                                <label for="" class="filter-form__group-label">Minumum</label>
+                                                <input
+                                                    type="text"
+                                                    name=""
+                                                    id=""
+                                                    class="filter-form__group-input"
+                                                    value="$30.000"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label for="" class="filter-form__group-label">Maximum</label>
+                                                <input
+                                                    type="text"
+                                                    name=""
+                                                    id=""
+                                                    type="text"
+                                                    class="filter-form__group-input"
+                                                    value="$100.000"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-col__separate"></div>
+
+                                    <!-- filter col 2: Size/Weight -->
+                                    <div class="filter-col">
+                                        <label class="filter-form__label">Size/Weight</label>
+                                    </div>
+
+                                    <div class="filter-col__separate"></div>
+
+                                    <!-- filter col 2: Brand -->
+                                    <div class="filter-col">
+                                        <label class="filter-form__label">Brand</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
                 </div>
                 <div class="row row-cols-4 row-cols-xl-2 row-cols-md-1 gy-3 gy-md-2 g-lg-2">
                     <!-- Categories item 1 -->
