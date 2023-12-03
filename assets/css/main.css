@@ -1750,6 +1750,16 @@ li {
 }
 .top-act__user {
   cursor: pointer;
+  position: relative;
+}
+.top-act__user:hover .top-act__user-logout {
+  display: block;
+}
+.top-act__user-logout {
+  position: absolute;
+  bottom: -10px;
+  right: -7px;
+  display: none;
 }
 .top-act__avatar {
   margin-left: 20px;
@@ -1763,6 +1773,11 @@ li {
   .top-act__avatar {
     margin: 0;
   }
+}
+
+.login-act {
+  display: flex;
+  align-items: center;
 }
 
 html.dark {
@@ -2381,6 +2396,8 @@ html {
   padding: 0 20px;
   border-radius: 6px;
   background: #f8f8fb;
+  display: flex;
+  align-items: center;
   font-size: 1.8rem;
   font-weight: 500;
   user-select: none;
