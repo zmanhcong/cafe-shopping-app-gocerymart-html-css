@@ -195,7 +195,7 @@ function handleActiveMenu() {
 }
 
 /**
- * JS toggle drawer menu on tablet and mobile
+ * JS toggle (when click )drawer menu on tablet and mobile
  *
  * How to use:
  * <button class="js-toggle" toggle-target="#box">Click</button>
@@ -207,11 +207,11 @@ function initJsToggle() {
     $$(".js-toggle").forEach((button) => {
         const target = button.getAttribute("toggle-target");
         if (!target) {
-            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+            document.body.innerText = `You need add "toggle-target" for : ${button.outerHTML}`;
         }
         button.onclick = () => {
             if (!$(target)) {
-                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+                return (document.body.innerText = `Cannot found attribute as "${target}"`);
             }
             const isHidden = $(target).classList.contains("hide");
 

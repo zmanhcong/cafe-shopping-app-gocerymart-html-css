@@ -14,10 +14,12 @@ html {
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
     }
+
     // mega menu Dropdown
     --dropdown-bg-color: #fff;
     --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
     --top-menu-border-color: #d2d1d6;
+
     // menu-content
     --top-menu-border-color: #d2d1d6;
 
@@ -43,4 +45,7 @@ html {
     --filter-shadow: rgba(200, 200, 200, 0.4);
     --filter-label-color: #9e9da8;
     --filter-label-backgroun-color: #f8f8fb;
+
+    --filter-arrow-up-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
+        brightness(98%) contrast(108%);
 }
