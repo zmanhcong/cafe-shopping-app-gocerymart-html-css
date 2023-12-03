@@ -2,7 +2,9 @@
 
 .footer {
     padding: 50px 0;
+
     background: var(--footer-bg-color);
+    font-size: 1.4rem;
 
     &__row {
         display: grid;
@@ -20,7 +22,6 @@
     &__desc,
     &__help-text {
         color: var(--text-color);
-        font-size: 1.6rem;
         line-height: 2.5rem;
         margin-top: 20px;
     }
@@ -29,17 +30,6 @@
         margin-top: 24px;
         margin-bottom: 24px;
     }
-
-    // &__form {
-    //     display: flex;
-    //     align-items: center;
-    //     @include abstracts.screen(xl) {
-    //         flex-direction: column;
-    //     }
-    //     @include abstracts.screen(lg) {
-    //         flex-direction: row;
-    //     }
-    // }
 
     &__form {
         display: flex;
@@ -72,20 +62,21 @@
         @include abstracts.screen(md) {
             flex: 1;
             width: 100px;
+
+            // not scale in mobile
+            font-style: 1.6rem;
         }
     }
 
     &__heading {
         font-weight: 600;
         color: var(--text-color);
-        font-size: 1.6rem;
         font-size: 1.8rem;
     }
 
     &__list {
         margin-top: 35px;
         color: var(--text-color);
-        font-size: 1.6rem;
         line-height: 2.2rem;
 
         @include abstracts.screen(lg) {
@@ -178,13 +169,3 @@
         }
     }
 }
-
-// .footer__bottom-icon {
-//     width: 14px;
-//     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(99%)
-//         contrast(99%);
-
-//     @include abstracts.screen(sm) {
-//         width: 18px;
-//     }
-// }
