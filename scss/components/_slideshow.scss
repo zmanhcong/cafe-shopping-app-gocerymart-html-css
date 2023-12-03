@@ -1,44 +1,134 @@
+@use "../abstracts";
+
 .slideshow {
-    overflow: hidden;
-    position: relative; // Added for positioning the buttons
+    position: relative;
 
     &__inner {
         display: flex;
-        // width: calc(1340px * (var(--total-slides) + 1)); // Use fixed width
-        width: calc(1340px * var(--total-slides)); // No need for +1 now
-        transition: margin-left 1s ease-in-out;
-        --total-slides: 3;
-    }
-
-    &__inner-img {
-        width: 1340px;
-        height: 455px;
-        object-fit: cover;
-        border-radius: 20px;
-        flex-shrink: 0;
         overflow: hidden;
     }
 
-    &__button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.5);
-        border: none;
-        cursor: pointer;
-        z-index: 10;
-        padding: 15px 20px;
-        border-radius: 30%;
+    &__item {
+        position: relative;
+        flex-shrink: 0;
+        width: 100%;
+        padding-top: 34%;
 
-        // Specific styles for each button
-        &--next {
-            right: 10px;
-            height: 59px;
+        @include abstracts.screen(md) {
+            padding-top: 50%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    &__page {
+        --color: #fff;
+
+        position: absolute;
+        bottom: 15%;
+        left: 5.2%;
+        width: 12.8%;
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+    }
+
+    &__num {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+        color: var(--color);
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+            line-height: 142.857%;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        height: 4px;
+        flex-shrink: 0;
+        background: var(--color);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+
+            width: 14px;
+            height: 14px;
+            border: 4px solid var(--color);
+            border-radius: 50%;
+
+            @include abstracts.screen(md) {
+                border-width: 3px;
+            }
         }
 
-        &--back {
-            left: 10px;
-            height: 59px;
+        &::before {
+            left: 0;
+            translate: -90% -50%;
+        }
+
+        &::after {
+            right: 0;
+            translate: 90% -50%;
         }
     }
 }
+
+// .slideshow {
+//     overflow: hidden;
+//     position: relative; // Added for positioning the buttons
+
+//     &__inner {
+//         display: flex;
+//         // width: calc(1340px * (var(--total-slides) + 1)); // Use fixed width
+//         width: calc(1340px * var(--total-slides)); // No need for +1 now
+//         transition: margin-left 1s ease-in-out;
+//         --total-slides: 3;
+//     }
+
+//     &__inner-img {
+//         width: 1340px;
+//         height: 455px;
+//         object-fit: cover;
+//         border-radius: 20px;
+//         flex-shrink: 0;
+//         overflow: hidden;
+//     }
+
+//     &__button {
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         background-color: rgba(255, 255, 255, 0.5);
+//         border: none;
+//         cursor: pointer;
+//         z-index: 10;
+//         padding: 15px 20px;
+//         border-radius: 30%;
+
+//         // Specific styles for each button
+//         &--next {
+//             right: 10px;
+//             height: 59px;
+//         }
+
+//         &--back {
+//             left: 10px;
+//             height: 59px;
+//         }
+//     }
+// }
