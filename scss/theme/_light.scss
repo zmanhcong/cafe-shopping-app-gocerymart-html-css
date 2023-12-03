@@ -48,4 +48,7 @@ html {
 
     --filter-arrow-up-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7476%) hue-rotate(110deg)
         brightness(98%) contrast(108%);
+
+    // Footer
+    --footer-bg-color: var(--header-bg-color);
 }

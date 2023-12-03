@@ -574,23 +574,22 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Footer -->
-            <footer id="footer" class="footer"></footer>
-            <script>
-                load("#footer", "./templates/footer.html");
-            </script>
-
-            <script>
-                // Assuming load is a function that loads the content and then runs a callback
-                load("#footer", "./templates/footer.html", function () {
-                    // This callback runs after the footer is loaded
-                    // Now it's safe to run the script that depends on the footer being present
-                    var script = document.createElement("script");
-                    script.src = "./assets/js/scripts.js";
-                    document.body.appendChild(script);
-                });
-            </script>
         </div>
+        <!-- Footer -->
+        <footer id="footer" class=""></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
+
+        <script>
+            // Assuming load is a function that loads the content and then runs a callback
+            load("#footer", "./templates/footer.html", function () {
+                // This callback runs after the footer is loaded
+                // Now it's safe to run the script that depends on the footer being present
+                var script = document.createElement("script");
+                script.src = "./assets/js/scripts.js";
+                document.body.appendChild(script);
+            });
+        </script>
     </body>
 </html>

@@ -3,6 +3,7 @@
 .home {
     &__container {
         margin-top: 40px;
+        margin-bottom: 50px;
     }
     &__heading {
         font-size: 2.4rem;
@@ -18,7 +19,6 @@
     &__row {
         display: flex;
         align-items: center;
-
         margin-bottom: 20px;
     }
 }
