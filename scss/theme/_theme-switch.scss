@@ -1,85 +1,49 @@
-.footer__inner {
-    position: relative;
+@use "../abstracts";
+
+.theme-settings-button {
+    width: 60px;
+}
+.light-mode-button,
+.dark-mode-button {
+    &.hide {
+        display: none;
+    }
+    color: var(--text-color);
+    font-size: 1.9rem;
 }
 
-.settings-button {
-    &-icon {
-        position: absolute;
-        bottom: 12px;
-        right: 12px;
+// .dark-mode-button {
+//     &.hide {
+//         display: none;
+//     }
+//     color: var(--text-color);
+// &:hover {
+//     padding: 13px;
+//     border-radius: 8px;
+//     background-color: #f1f4f8;
+// }
+// @include abstracts.screen(xl) {
+//     &:hover {
+//         padding: 0;
+//         background-color: transparent;
+//     }
+// }
+// }
 
-        font-size: 3rem;
-        padding: 12px;
-        width: auto;
-        object-fit: cover;
-        border-radius: 100px;
-        color: rgb(116, 207, 51);
-
-        transition: background-color 0.3s, transform 0.1s; // Add transition for smooth effect
-
-        &:hover {
-            background: rgb(106, 111, 126);
-            transform: scale(1.05); // A slight increase in size on hover
-        }
-
-        // Adding a new modifier for the clicked state
-        &.clicked {
-            background-color: #ccbab8;
-            transform: scale(0.95); // A slight decrease in size to give a click effect
-        }
-    }
-}
-
-.themeModal {
-    background-color: #fff;
-    width: 300px;
-    height: 150px;
-    border-radius: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
-    box-shadow: 1px -3px 29px -5px rgba(0, 0, 0, 0.41);
-
-    position: absolute;
-    bottom: 60px;
-    right: 30px;
-    &__separate {
-        margin-top: 8px;
-        height: 2px;
-        width: 100%;
-        background: #eceaea;
-    }
-    // visible when click to setting icon
-    &--visible {
-        opacity: 1;
-        visibility: visible;
-    }
-    &__content {
-        h2 {
-            padding-top: 20px;
-            font-size: 1.6rem;
-            color: rgb(66, 186, 200);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    &__light-button {
-        margin: 20px 40px;
-        padding: 10px 20px;
-        background-color: rgb(211, 211, 233);
-        color: #000;
-        border-radius: 10px;
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
-    &__dark-button {
-        padding: 10px 20px;
-        background-color: rgb(6, 15, 50);
-        color: white;
-        border-radius: 10px;
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
-}
+// .light-mode-button {
+//     &.hide {
+//         display: none;
+//     }
+//     color: var(--text-color);
+// &:hover {
+//     padding: 13px;
+//     border-radius: 8px;
+//     background-color: #2d2d31;
+// }
+// @include abstracts.screen(xl) {
+//     &:hover {
+//         padding: 0;
+//         background-color: transparent;
+//     }
+// }
+// }

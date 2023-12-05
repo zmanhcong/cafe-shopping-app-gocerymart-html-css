@@ -86,62 +86,28 @@ window.addEventListener("resize", calArrowPos);
 // Recalculate the arrow position after loading the template
 window.addEventListener("template-loaded", calArrowPos);
 
-//  create a settings button that allows  to switch between dark and light themes
+/*
+ *
+ Create a settings button that allows  to switch between dark and light themes
+ *
+ */
+
 document.addEventListener("DOMContentLoaded", (event) => {
-    const settingsBtn = document.getElementById("settings-btn");
-    const themeModal = document.getElementById("theme_modal");
-    const lightThemeBtn = document.getElementById("light-theme");
-    const darkThemeBtn = document.getElementById("dark-theme");
-    const settingsBtnIcon = document.querySelector(".settings-button-icon");
-    // settingsBtn.addEventListener("click", () => {
-    //     themeModal.classList.toggle("themeModal--visible");
-    // });
-
-    settingsBtnIcon.addEventListener("click", function () {
-        this.classList.toggle("clicked");
-    });
-
-    settingsBtn.addEventListener("click", () => {
-        const isVisible = themeModal.classList.contains("themeModal--visible");
-        if (isVisible) {
-            themeModal.classList.remove("themeModal--visible");
-        } else {
-            themeModal.classList.add("themeModal--visible");
-        }
-    });
+    const lightThemeBtn = document.getElementById("light-mode-button");
+    const darkThemeBtn = document.getElementById("dark-mode-button");
 
     lightThemeBtn.addEventListener("click", () => {
         document.documentElement.classList.remove("dark");
-        themeModal.classList.remove("themeModal--visible");
-        settingsBtnIcon.classList.remove("clicked");
+        darkThemeBtn.classList.remove("hide");
+        lightThemeBtn.classList.add("hide");
     });
 
     darkThemeBtn.addEventListener("click", () => {
         document.documentElement.classList.add("dark");
-        themeModal.classList.remove("themeModal--visible");
-        settingsBtnIcon.classList.remove("clicked");
-    });
-
-    // Close the modal if a click occurs outside of it
-    document.addEventListener("click", (e) => {
-        if (
-            !themeModal.contains(e.target) &&
-            !settingsBtn.contains(e.target) &&
-            themeModal.classList.contains("themeModal--visible")
-        ) {
-            themeModal.classList.remove("themeModal--visible");
-            settingsBtnIcon.classList.remove("clicked");
-        }
+        lightThemeBtn.classList.remove("hide");
+        darkThemeBtn.classList.add("hide");
     });
 });
-
-// document.addEventListener("DOMContentLoaded", (event) => {
-//     const settingsBtnIcon = document.querySelector(".settings-button-icon");
-
-//     settingsBtnIcon.addEventListener("click", function () {
-//         this.classList.toggle("clicked");
-//     });
-// });
 
 /**
  * Keep menu active when hovering
