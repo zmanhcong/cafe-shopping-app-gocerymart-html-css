@@ -48,4 +48,18 @@ html.dark {
     --filter-label-backgroun-color: #171c28;
     --filter-arrow-up-color: brightness(0) saturate(100%) invert(16%) sepia(9%) saturate(1280%) hue-rotate(183deg)
         brightness(96%) contrast(92%);
+
+    // Auth
+    --auth-content-bg: #292e39;
+    --auth-intro-bg: #171c28;
+    --auth-intro-text-color: #b9babe;
+    --auth-heading-color: #b9babe;
+    --sign-with-google-btn-color: #b9babe;
+    --form-input-bg: #292e39;
+
+    // Forms
+    --form-placeholder-color: #b9babe;
+    --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+    --form-select-dialog-bg: #2f3441;
+    --form-option-hover-bg: #292e39;
 }

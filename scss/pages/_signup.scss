@@ -1,135 +1,179 @@
-.signup {
-    &__row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 130px;
+@use "../abstracts";
 
-        padding: 50px 140px;
-        height: 100vh;
+.auth {
+    display: flex;
+    min-height: 100vh;
+
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
     }
-    &__col {
+
+    &__intro,
+    &__content {
+        flex: 1;
+        padding: 0 30px;
     }
-    &__info {
-        width: 422px;
-        margin: auto;
+
+    &__intro {
+        position: relative;
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        gap: 50px;
+        background: var(--auth-intro-bg);
+
+        &-logo,
+        &-next {
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+        }
+
+        &-logo {
+            top: 80px;
+        }
+
+        &-next {
+            bottom: 50px;
+        }
+
+        &-img {
+            width: min(424px, 100%);
+        }
+
+        &-text {
+            max-width: 412px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+            color: var(--auth-intro-text-color);
+
+            @include abstracts.screen(md) {
+                font-size: 1.5rem;
+            }
+        }
     }
-    &__logo {
-        width: 422px;
-        height: 261px;
-        object-fit: cover;
-    }
-    &__intro {
-        color: var(--text-color);
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 144.444%;
-        margin-top: 49px;
-        text-align: center;
-    }
-    // col2
+
     &__content {
-        width: 460px;
+        background: var(--auth-content-bg);
+
+        @include abstracts.screen(md) {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            transition: translate 0.3s;
+            overflow-y: auto;
+
+            &.hide {
+                translate: 100%;
+            }
+        }
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            width: min(460px, 100%);
+            margin: 0 auto;
+            padding: 50px 0;
+
+            @include abstracts.screen(md) {
+                padding: 32px 0;
+            }
+        }
     }
-    &__website-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
     &__heading {
-        color: var(--text-color);
-        font-size: 30px;
-        font-weight: 500;
         margin-top: 50px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    &__desc {
-        color: #9e9da8;
-        font-size: 15px;
-        font-style: normal;
+        font-size: 3rem;
         font-weight: 500;
         line-height: 146.667%;
-        margin-bottom: 60px;
-        text-align: center;
+        color: var(--auth-heading-color);
+
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            font-size: 2.2rem;
+        }
     }
+
+    &__desc {
+        margin-top: 10px;
+        padding: 0 20px;
+        color: #9e9da8;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__message {
+        margin-top: 30px;
+    }
+
     &__form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-    }
-    &__input {
         width: 100%;
         margin-top: 30px;
-        padding: 12px 170px 12px 12px;
-        outline-color: cadetblue;
-        border-radius: 10px;
-        border: 1px solid #d2d1d6;
-    }
-    &__form-act {
-        margin-top: 20px;
-        margin-bottom: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        width: 100%;
 
-        &--checkbox {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            padding: 2.75px;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #9e9da8;
+        &-forgot {
+            margin-top: 10px;
         }
-        &--label {
-            display: inline-block;
-            margin-left: 6px;
-            color: #9e9da8;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 146.667%;
-        }
-        &--link {
-            display: inline-block;
-            margin-left: auto;
-            color: #0071dc;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            margin-top: 0;
         }
     }
+
+    &__link {
+        color: #0071dc;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 50px;
+
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            gap: 20px;
+        }
+    }
+
     &__btn {
-        // &-signup {
-        // }
-        &-signupGmail {
-            margin-left: 0 !important;
-            margin-bottom: 108px;
-        }
+        width: 100%;
     }
-    &__footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+    &__sign-with-google {
+        // color: var(--sign-with-google-btn-color);
+        color: var(--text-color);
+    }
+    &__text {
+        margin-top: 108px;
+        color: #9e9da8;
+        font-size: 1.8rem;
+        line-height: 144.444%;
 
-        &-desc {
-            color: #9e9da8;
-            font-size: 18px;
-            font-weight: 400;
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            font-size: 1.6rem;
         }
+
         &-link {
-            color: #0071dc;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: inherit;
         }
     }
 }

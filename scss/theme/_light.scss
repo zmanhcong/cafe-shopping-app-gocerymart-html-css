@@ -51,4 +51,19 @@ html {
 
     // Footer
     --footer-bg-color: var(--header-bg-color);
+
+    // Sign up(Auth)
+    // Auth
+    --auth-content-bg: #fff;
+
+    @include abstracts.screen(md) {
+        --auth-intro-bg: #fff;
+    }
+
+    // Forms
+    --form-placeholder-color: #d2d1d6;
+    --form-select-dialog-shadow: rgba($color: #000000, $alpha: 0.15);
+    --form-select-dialog-bg: #fff;
+    --form-option-hover-bg: #ebebeb;
+    --form-input-bg: #fff;
 }

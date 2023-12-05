@@ -1,52 +1,77 @@
+// Filter button
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 6px;
+
+    color: var(--filter-btn-color);
+    background: var(--filter-btn-bg);
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 142.857%;
+}
+
+// Like button
 .like-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 50px;
     height: 50px;
-    padding: 3px 2.503px 3.002px 2.5px;
-    fill: var(--secondary-color-background, #fff);
-    box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
     border-radius: 50%;
 
-    &--liked .product-card__like-btn-icon {
+    box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+
+    &:not(&--liked) &__icon--liked {
         display: none;
     }
 
-    // When the like-btn does not have the --liked modifier, hide the red icon
-    &:not(.like-btn--liked) .product-card__like-btn-red-icon {
+    &--liked &__icon {
         display: none;
     }
 
-    // When the like-btn has the --liked modifier, show the red icon
-    &.like-btn--liked .product-card__like-btn-red-icon {
-        display: block;
+    &__icon--liked {
+        margin-top: 6px;
     }
 }
 
 // Buttons
 .btn {
-    height: 46px;
-    padding: 0 20px;
-    border-radius: 6px;
-    background: #f8f8fb;
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 500;
-    user-select: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+
+    background: #f8f8fb;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    user-select: none;
+
+    &--small {
+        height: 40px;
+    }
 
     + .btn {
-        margin-left: 20px;
-        margin-top: 30px;
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
     }
 
     &--text {
-        color: #9e9da8;
         background: transparent;
         font-weight: 400;
-        height: 100%;
     }
 
     &--primary {
@@ -61,6 +86,11 @@
 
     &--rounded {
         border-radius: 99px;
+    }
+
+    &--danger {
+        color: #fff;
+        background: #ed4337;
     }
 
     &[disabled],

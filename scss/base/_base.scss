@@ -24,6 +24,7 @@ body {
 a,
 button,
 img,
+label,
 div,
 input,
 textarea,
@@ -33,6 +34,8 @@ select {
     font-size: inherit;
     color: inherit;
     -webkit-tap-highlight-color: transparent;
+    outline: none;
+    border: none;
 }
 
 .icon {
@@ -66,4 +69,9 @@ li {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+}
+
+// Add transition to all elements for smooth theme change
+* {
+    transition: background-color 0.4s, color 0.4s;
 }

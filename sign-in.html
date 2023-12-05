@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign in | Grocery Mart</title>
+        <title>Sign In | Grocery Mart</title>
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
@@ -15,8 +15,6 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
-        <!-- Add awesome font -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
@@ -25,10 +23,99 @@
         <script src="./assets/js/scripts.js"></script>
     </head>
     <body>
-        <!-- Main -->
-        <main>
-            <h2>Sign in page</h2>
-            <a href="./index-logined.html" class="btn btn--primary" style="width: 100px">Sign In</a>
+        <main class="auth">
+            <!-- Auth intro -->
+            <div class="auth__intro">
+                <a href="./" class="logo auth__intro-logo d-none d-md-flex">
+                    <img src="./assets/icon/logo.png" alt="grocerymart" class="logo__img" />
+                    <h1 class="logo__title">grocerymart</h1>
+                </a>
+                <img src="./assets/icon/signup/signup-logo.png" alt="" class="auth__intro-img" />
+                <p class="auth__intro-text">
+                    The best of luxury brand values, high quality products, and innovative services
+                </p>
+                <button class="auth__intro-next d-none d-md-flex" toggle-target="#auth-content">
+                    <img src="./assets/img/auth/intro-arrow.svg" alt="" />
+                </button>
+            </div>
+
+            <!-- Auth content -->
+            <div id="" class="auth__content">
+                <div class="auth__content-inner">
+                    <a href="./" class="logo">
+                        <img src="./assets/icon/logo.png" alt="grocerymart" class="logo__img" />
+                        <h1 class="logo__title">grocerymart</h1>
+                    </a>
+                    <h1 class="auth__heading">Hello Again!</h1>
+                    <p class="auth__desc">
+                        Welcome back to sign in. As a returning customer, you have access to your previously saved all
+                        information.
+                    </p>
+                    <form action="./index-logined.html" class="form auth__form">
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="email"
+                                    name=""
+                                    id=""
+                                    value="admin@grocerymart.com"
+                                    placeholder="Email"
+                                    class="form__input"
+                                    autofocus
+                                    required
+                                />
+                                <img src="./assets/icon/message.svg" alt="" class="form__input-icon" />
+                                <img src="./assets/icon/form-error.svg" alt="" class="form__input-icon-error" />
+                            </div>
+                            <p class="form__error">Email is not in correct format</p>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__text-input">
+                                <input
+                                    type="password"
+                                    name=""
+                                    id=""
+                                    value="manhcong123"
+                                    placeholder="Password"
+                                    class="form__input"
+                                    required
+                                    minlength="6"
+                                />
+                                <img src="./assets/icon/lock.svg" alt="" class="form__input-icon" />
+                                <img src="./assets/icon/form-error.svg" alt="" class="form__input-icon-error" />
+                            </div>
+                            <p class="form__error">Password must be at least 6 characters</p>
+                        </div>
+
+                        <div class="form__group form__group--inline">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" />
+                                <span class="form__checkbox-label">Set as default card</span>
+                            </label>
+                            <a href="#!" class="form__group--inline-link"> Recovery Password </a>
+                        </div>
+                        <div class="form__group auth__btn-group">
+                            <button class="btn btn--primary auth__btn form__submit-btn">Sign Up</button>
+                            <button class="btn btn--outline auth__btn btn--no-margin auth__sign-with-google">
+                                <img
+                                    src="./assets/icon/google.svg"
+                                    alt=""
+                                    class="btn__icon icon auth__sign-with-google"
+                                />
+                                Sign in with Google
+                            </button>
+                        </div>
+                    </form>
+
+                    <p class="auth__text">
+                        Don’t have an account yet?
+                        <a href="./sign-up.html" class="auth__link auth__text-link">Sign Up</a>
+                    </p>
+                </div>
+            </div>
         </main>
+        <script>
+            window.dispatchEvent(new Event("template-loaded"));
+        </script>
     </body>
 </html>
