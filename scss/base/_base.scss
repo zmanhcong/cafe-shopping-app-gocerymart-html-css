@@ -71,6 +71,25 @@ li {
     }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--text-color) !important; /* Sửa 'while' thành 'white' */
+    background-color: black !important;
+}
+
+// input:-webkit-autofill {
+//     box-shadow: 0 0 0 1000px rgb(0, 0, 0) inset !important; // background-colorでは変わらないため、box-shadowを指定。
+//     -webkit-text-fill-color: #fff !important;
+// }
+
+// // 自動補完後のカーソルが黒になるので、合わせて変更。
+// input:-webkit-autofill:focus {
+//     caret-color: #fff !important;
+// }
+
 // Add transition to all elements for smooth theme change
 * {
     transition: background-color 0.4s, color 0.4s;

@@ -12,38 +12,9 @@
     font-size: 1.9rem;
 }
 
-// .dark-mode-button {
-//     &.hide {
-//         display: none;
-//     }
-//     color: var(--text-color);
-// &:hover {
-//     padding: 13px;
-//     border-radius: 8px;
-//     background-color: #f1f4f8;
-// }
-// @include abstracts.screen(xl) {
-//     &:hover {
-//         padding: 0;
-//         background-color: transparent;
-//     }
-// }
-// }
-
-// .light-mode-button {
-//     &.hide {
-//         display: none;
-//     }
-//     color: var(--text-color);
-// &:hover {
-//     padding: 13px;
-//     border-radius: 8px;
-//     background-color: #2d2d31;
-// }
-// @include abstracts.screen(xl) {
-//     &:hover {
-//         padding: 0;
-//         background-color: transparent;
-//     }
-// }
-// }
+.light-mode-button {
+    color: #fdfdfd;
+}
+.dark-mode-button {
+    color: #47507d;
+}

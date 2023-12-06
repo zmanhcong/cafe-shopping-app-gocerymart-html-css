@@ -1,0 +1,14 @@
+.auth_message {
+    margin-top: 20px;
+
+    background: #b6e8cd;
+    color: var(--text-color);
+    padding: 14px 16px;
+    background: #1da1f2;
+    width: 100%;
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}

@@ -204,55 +204,89 @@ window.addEventListener("template-loaded", () => {
 });
 
 // JavaScript slideshow that cycles through images every 3 seconds
-document.addEventListener("DOMContentLoaded", function () {
-    const slideshowInner = document.querySelector(".slideshow__inner");
-    const slides = document.querySelectorAll(".slideshow__inner-img");
-    const firstSlideClone = slides[0].cloneNode(true); // Clone one image
-    slideshowInner.appendChild(firstSlideClone); // Append the clone image to the end
-    let slideIndex = 0;
-    const realTotalSlides = slides.length; // The number of original slides
+// document.addEventListener("DOMContentLoaded", function () {
+//     const slideshowInner = document.querySelector(".slideshow__inner");
+//     const slides = document.querySelectorAll(".slideshow__inner-img");
+//     const firstSlideClone = slides[0].cloneNode(true); // Clone one image
+//     slideshowInner.appendChild(firstSlideClone); // Append the clone image to the end
+//     let slideIndex = 0;
+//     const realTotalSlides = slides.length; // The number of original slides
 
-    function updateSlidePosition() {
-        slideshowInner.style.transition = "margin-left 1s ease-in-out";
-        slideshowInner.style.marginLeft = `-${slideIndex * 1340}px`;
-    }
-    function moveToNextSlide() {
-        if (slideIndex < realTotalSlides) {
-            slideIndex++;
-            updateSlidePosition();
-        } else {
-            // When reaching the cloned slide, instantly reset to the first slide without transition
-            slideshowInner.style.transition = "none";
-            slideshowInner.style.marginLeft = "0px"; // Instantly reset to the beginning
-            slideIndex = 0; // Reset to the first slide index
+//     function updateSlidePosition() {
+//         slideshowInner.style.transition = "margin-left 1s ease-in-out";
+//         slideshowInner.style.marginLeft = `-${slideIndex * 1340}px`;
+//     }
+//     function moveToNextSlide() {
+//         if (slideIndex < realTotalSlides) {
+//             slideIndex++;
+//             updateSlidePosition();
+//         } else {
+//             // When reaching the cloned slide, instantly reset to the first slide without transition
+//             slideshowInner.style.transition = "none";
+//             slideshowInner.style.marginLeft = "0px"; // Instantly reset to the beginning
+//             slideIndex = 0; // Reset to the first slide index
 
-            // Use setTimeout to re-enable the transition for the next move
-            setTimeout(() => {
-                slideshowInner.style.transition = "margin-left 1s ease-in-out";
-            }, 10);
-        }
-    }
+//             // Use setTimeout to re-enable the transition for the next move
+//             setTimeout(() => {
+//                 slideshowInner.style.transition = "margin-left 1s ease-in-out";
+//             }, 10);
+//         }
+//     }
 
-    function moveToPreviousSlide() {
-        if (slideIndex > 0) {
-            slideIndex--;
-        } else {
-            // If we're at the first slide and going back, move to the last slide
-            slideIndex = realTotalSlides - 1; // Set index to the last original slide
-        }
-        // animate
-        updateSlidePosition();
-    }
+//     function moveToPreviousSlide() {
+//         if (slideIndex > 0) {
+//             slideIndex--;
+//         } else {
+//             // If we're at the first slide and going back, move to the last slide
+//             slideIndex = realTotalSlides - 1; // Set index to the last original slide
+//         }
+//         // animate
+//         updateSlidePosition();
+//     }
 
-    document.querySelector(".slideshow__button--next").addEventListener("click", moveToNextSlide);
-    document.querySelector(".slideshow__button--back").addEventListener("click", moveToPreviousSlide);
+//     document.querySelector(".slideshow__button--next").addEventListener("click", moveToNextSlide);
+//     document.querySelector(".slideshow__button--back").addEventListener("click", moveToPreviousSlide);
 
-    slideshowInner.addEventListener("transitionend", function () {
-        // Check if we're at the cloned slide and reset to the first slide without transition
-        if (slideIndex === realTotalSlides) {
-            slideshowInner.style.transition = "none";
-            slideshowInner.style.marginLeft = "0px"; // Instantly move to the first slide
-            slideIndex = 0; // Reset to the first slide index
-        }
+//     slideshowInner.addEventListener("transitionend", function () {
+//         // Check if we're at the cloned slide and reset to the first slide without transition
+//         if (slideIndex === realTotalSlides) {
+//             slideshowInner.style.transition = "none";
+//             slideshowInner.style.marginLeft = "0px"; // Instantly move to the first slide
+//             slideIndex = 0; // Reset to the first slide index
+//         }
+//     });
+// });
+
+/*
+ *
+    Show successful message when reset password
+ *
+ */
+document.addEventListener("DOMContentLoaded", (event) => {
+    const resetPasswordBtn = document.getElementById("reset-password-btn");
+    const resetPasswordMessage = document.getElementById("auth__reset-password-message");
+
+    resetPasswordBtn.addEventListener("click", () => {
+        resetPasswordMessage.style.visibility = "visible"; // make it visible
+        resetPasswordMessage.style.opacity = "1"; // fade it in
     });
 });
+
+// auth__reset-password
+
+//  document.addEventListener("DOMContentLoaded", (event) => {
+//     const lightThemeBtn = document.getElementById("light-mode-button");
+//     const darkThemeBtn = document.getElementById("dark-mode-button");
+
+//     lightThemeBtn.addEventListener("click", () => {
+//         document.documentElement.classList.remove("dark");
+//         darkThemeBtn.classList.remove("hide");
+//         lightThemeBtn.classList.add("hide");
+//     });
+
+//     darkThemeBtn.addEventListener("click", () => {
+//         document.documentElement.classList.add("dark");
+//         lightThemeBtn.classList.remove("hide");
+//         darkThemeBtn.classList.add("hide");
+//     });
+// });
