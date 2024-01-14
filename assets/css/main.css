@@ -1849,6 +1849,8 @@ html.dark {
   --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
   --form-select-dialog-bg: #2f3441;
   --form-option-hover-bg: #292e39;
+  --breadcrumbs-bg: #171c28;
+  --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1893,6 +1895,8 @@ html {
   --form-select-dialog-bg: #fff;
   --form-option-hover-bg: #ebebeb;
   --form-input-bg: #fff;
+  --breadcrumbs-bg: #f6f6f6;
+  --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -2424,6 +2428,7 @@ html {
 .btn--text {
   background: transparent;
   font-weight: 400;
+  color: var(--text-color);
 }
 .btn--primary {
   color: #171c28;
@@ -3111,6 +3116,35 @@ html {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.product {
+  height: 80vh;
+}
+
+.breadcrumbs {
+  margin-top: 30px;
+  border-radius: 10px;
+  background: var(--breadcrumbs-bg);
+  box-shadow: 0px 20px 60px 10px var(--breadcrumbs-shadow);
+}
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9e9da8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+}
+.breadcrumbs__link-current {
+  color: var(--text-color);
 }
 
 .home__container {

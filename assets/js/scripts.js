@@ -272,21 +272,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-// auth__reset-password
-
-//  document.addEventListener("DOMContentLoaded", (event) => {
-//     const lightThemeBtn = document.getElementById("light-mode-button");
-//     const darkThemeBtn = document.getElementById("dark-mode-button");
-
-//     lightThemeBtn.addEventListener("click", () => {
-//         document.documentElement.classList.remove("dark");
-//         darkThemeBtn.classList.remove("hide");
-//         lightThemeBtn.classList.add("hide");
-//     });
-
-//     darkThemeBtn.addEventListener("click", () => {
-//         document.documentElement.classList.add("dark");
-//         lightThemeBtn.classList.remove("hide");
-//         darkThemeBtn.classList.add("hide");
-//     });
-// });
+document.querySelectorAll(".product-card__like-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+        this.classList.toggle("liked");
+    });
+});
